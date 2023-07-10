@@ -2,7 +2,7 @@ import React from 'react'
 import {AiFillGithub} from 'react-icons/ai'
 import {HiOutlineExternalLink} from 'react-icons/hi'
 
-export default function Project({name, image, description, language, styling, projectCode, reverseRow, liveDemo }) {
+export default function Project({name, image, description, language, styling, projectCode, reverseRow, liveDemo, liveDemoStyle }) {
   return (
     <div className="project" style={{flexDirection: reverseRow}}>
         <div className="image">
@@ -17,7 +17,7 @@ export default function Project({name, image, description, language, styling, pr
         </div>
         <div className="code">
             <AiFillGithub onClick={()=>window.open(projectCode, '_blank')} style={{width: '30px', height: '30px'}} />
-            <HiOutlineExternalLink onClick={()=>window.open(liveDemo, '_blank')} style={{width: '30px', height: '30px'}} />
+            <HiOutlineExternalLink onClick={()=>window.open(liveDemo, '_blank')} style={liveDemoStyle} />
         </div>
         </div>
     </div>
