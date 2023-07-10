@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu:wght@300&display=swap');
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, Ubuntu, sans-serif;
+}
+
+:root{
+  --nav-height: 70px;
+  --nav-gap: 20px;
+  --body-background-color: #fff
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 5px 15px;
+  background-color: #eee;
+  height: var(--nav-height);
+  font-size: 18px;
+  margin-bottom: var(--nav-gap);
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nav-items{
+  justify-content: flex-start;
+}
+
+.nav-items ul{
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-items ul li{
+  text-decoration: none;
+  color: #000;
+}
+
+.social-links,
+.home,
+.home .profile,
+.projects,
+.project,
+.contacts,
+.contacts .contact-item,
+.neDemo,
+.error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links{
+  gap: 20px;
+  cursor: pointer;
+}
+
+
+
+.home{
+  flex-direction: column;
+  gap: 100px;
+  height: calc(100vh - var(--nav-height) - var(--nav-gap) );
+  background-color: var(--body-background-color);
+}
+
+.home .profile{
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile div{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 50px;
+}
+
+.profile div .profession{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile div .profession :last-child{
+  margin-left: 150px;
+}
+
+.profile div .profession span{
+  font-size: 50px;
+}
+
+.profile .name{
+  font-size: 20px;
+  margin: 10px;
+}
+
+.skills{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.skills div{
+  display: flex;
+  gap: 10px;
+}
+
+.skills div img{
+  width: 48px;
+}
+
+
+
+.projects{
+  flex-direction: column;
+  gap: 100px;
+  margin-bottom: 20px;
+  background-color: var(--body-background-color);
+}
+
+.project{
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project .image{
+  max-width: 600px;
+}
+
+.project .image img{
+  width: 100%;
+  object-fit: contain;
+  border: 1px solid blue;
+}
+
+.project .description{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 10px;
+}
+
+.project .description h3{
+  margin: 0;
+  font-size: 22px;
+}
+
+.project .description p{
+  font-size: 16px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project .description .tech-used span{
+  font-size: 15px;
+}
+
+.project .description .tech-used,
+.project .description .code{
+  display: flex;
+  gap: 30px;
+}
+
+
+.resume{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-height) - var(--nav-gap) );
+}
+
+.resume div{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 900px;
+}
+
+.resume div span{
+  font-size: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 7px;
+  line-height: 50px;
+}
+
+
+.contacts{
+  flex-direction: column;
+  height: calc(100vh - var(--nav-height) - var(--nav-gap) );
+}
+
+.contacts .contact-items{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.contacts .contact-item{
+  gap: 3px;
+}
+
+.contacts .contact-item img{
+  width: 100px;
+  cursor: pointer;
+}
+
+.contacts .contact-item span{
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.neDemo,
+.error{
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.neDemo p,
+.error p{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.neDemo button,
+.error button{
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  background-color: #007BB6;
+}
+
+@media screen and (max-width: 750px) {
+  .profile div{
+    flex-direction: column;
+  }
+  
+.profile div .profession :last-child{
+  margin-left: 50px;
+}
+
+.profile div .profession span{
+  font-size: 40px;
+}
+
+.home .profile .name{
+  font-size: 18 px;
+}
+
+.neDemo p,
+.error p{
+  font-size: 21px;
+  font-weight: 500;
+}
+}
+
+@media screen and (max-width: 400px) {
+  .navbar .social-links{
+    display: none;
+  }
+  .nav-items ul{
+    gap: 10px;
+  }
+  
+  .navbar{
+    gap: 20px;
+    padding: 5px 10px;
+    font-size: 17px;
+  }
+  
+  .social-links{
+    gap: 7px;
+  }
+  .project .description p{
+    font-size: 15px;
+  }
+
+  .profile div .profession span{
+    font-size: 30px;
+  }
+  
+  .profile .name{
+    font-size: 20px;
+    margin: 15px;
+  }
+
+  .skills div .stack{
+    display: none;
+  }
+  .skills{
+    flex-direction: column;
+  }
+}
