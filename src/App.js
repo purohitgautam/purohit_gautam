@@ -17,7 +17,6 @@ function App() {
       <Route strict exact path='/projects' element={<Projects />} />
       <Route strict exact path='/resume' element={<Resume />} />
       <Route strict exact path='/contact' element={<Contact />} />
-      <Route strict exact path='/projects/nodemo' element={<NoDemo />} />
       <Route strict exact path='*' element={<Error />} />
       </Routes>
     </div>
