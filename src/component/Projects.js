@@ -14,6 +14,7 @@ export default function Projects() {
        styling={'CSS'}
        projectCode={'https://github.com/purohitgautam/purohit-store'}
        liveDemo={'https://purohit-store.netlify.app/'}
+       liveDemoStyle={{width: '30px', height: '30px'}}
       />
             
       <Project
@@ -24,7 +25,7 @@ export default function Projects() {
        styling={'CSS'}
        projectCode={'https://github.com/purohitgautam/news_break'} 
        reverseRow={'row-reverse'}
-       liveDemo={'https://purohitgautam.netlify.app/projects/nodemo'}
+       liveDemoStyle={{display: 'none'}}
       />
     </section>
   )
