@@ -5,7 +5,6 @@ import Home from './component/Home';
 import Projects from './component/Projects';
 import Resume from './component/Resume';
 import Contact from './component/Contact';
-import NoDemo from './component/NoDemo';
 import Error from './component/Error';
 
 function App() {
