@@ -183,6 +183,7 @@ body{
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - var(--nav-height) - var(--nav-gap) );
+  margin: 5px;
 }
 
 .resume div{
