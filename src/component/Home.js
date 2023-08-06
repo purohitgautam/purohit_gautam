@@ -1,36 +1,133 @@
-import React from 'react'
+import React, { useState } from "react";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 export default function Home() {
+
+  let [formVisinility, setFormVisinility] = useState(false)
+  let [mailInput, setMailInput] = useState('')
+  let [messegeInput, setMessegeInput] = useState('')
+  const handleMessegeSubmit = (e)=>{
+    e.preventDefault()
+    setMailInput('')
+    setMessegeInput('')
+    alert('Messege Not Sent')
+  }
+
   return (
     <div>
-        <div className="home">
-          <div className="profile">
-            <div>
-              <div className="image">
-                <img src={require('./images/gautam_purohit.jpg')} alt="profileImg" width={200} height={200} style={{borderRadius: '50%', objectFit: 'contain'}}/>
-              </div>
-              <div className="profession">
-                  <span>React.js Frontend</span>
-                  <span>Web Developer</span>
-              </div>
-            </div>
+      <div className="home">
+        <div className="profile">
+          <div className="profile-div">
+            <h1 className="profession">
+              frontend react web Developer{" "}
+              <img
+                className="waving-hand"
+                src={require("./images/Waving_Hand_Sign_Emoji.webp")}
+                alt="waving"
+              />
+            </h1>
             <span className="name">
-              hii, i'm Gautam Purohit. A Passionate Front-end React<br/> Developer based in Surat, Gujarat
+              hii, i'm Gautam Purohit. A Passionate Front-end React
+              <br /> Developer based in Surat, Gujarat
             </span>
-          </div>
-          <div className="skills">
-            <div>
-              <span>Tech Stacks</span>
-              <span className='stack'>|</span>
+            <div className="social-links">
+              <div data-title="Github">
+                <BsGithub
+                  style={{ width: "22px", height: "22px" }}
+                  onClick={() =>
+                    window.open("https://github.com/Purohitgautam", "_blank")
+                  }
+                />
+              </div>
+              <div data-title="Linked-In">
+                <BsLinkedin
+                  style={{ width: "22px", height: "22px" }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.linkedin.com/in/gautam-purohit-027417207",
+                      "_blank"
+                    )
+                  }
+                />
+              </div>
             </div>
-            <div>
-              <img src={require('./images/html-logo.png')} alt="HTML" />
-              <img src={require('./images/css-logo.png')} alt="CSS" />
-              <img src={require('./images/javaScript-logo.png')} alt="javaScript" />
-              <img src={require('./images/react-logo.png')} alt="react.js" />
+          </div>
+          <div className="image"></div>
+        </div>
+        <div className="skills">
+          <span>Tech Stacks</span>
+          <div>
+            <img src={require("./images/html-logo.png")} alt="HTML" />
+            <img src={require("./images/css-logo.png")} alt="CSS" />
+            <img
+              src={require("./images/javaScript-logo.png")}
+              alt="javaScript" 
+            />
+            <img src={require("./images/react-logo.png")} alt="react.js" />
+          </div>
+        </div>
+
+        <div className="about-me">
+          <div className="about-me-image">
+            <img
+              className="laptop-img"
+              src={require("./images/purohitSocial-image.png")}
+              alt="projectImage"
+            />
+            <span className="image-side">
+              <img
+                className="profession-text"
+                src={require("./images/profession-text.svg").default}
+                alt="text"
+              />
+            </span>
+            <img
+              className="working-emoji"
+              src={require("./images/working-emoji.png")}
+              alt="working-emoji"
+            />
+          </div>
+
+          <div className="about-me-description">
+            <h3>"ABOUT ME"</h3>
+            <p>
+              A dedicated Front-end Developer based in surat, India. As a Junior
+              Front-End Developer, I possess an impressive arsenal of skills in
+              HTML, CSS, JavaScript, React. I am also a team player who thrives
+              in collaborating with cross-functional teams to produce
+              outstanding web applications
+            </p>
+          </div>
+          <div className="hanger">
+            <div className="digital-ball">
+              <div className="overlay"></div>
+              <div className="globe">
+                <div className="globe-wrap">
+                  <div className="circle"></div>
+                  <div className="circle"></div>
+                  <div className="circle"></div>
+                  <div className="circle-hor"></div>
+                  <div className="circle-hor-middle"></div>
+                </div>
+              </div>
+            </div>
+            <div className="hanger-text">
+              <span>Located </span>
+              <span>in surat</span>
             </div>
           </div>
         </div>
+        <div className="messege-me">
+          <p onClick={()=> setFormVisinility(!formVisinility)}>MESSEGE ME</p>
+          <div className={`messege-form ${formVisinility ? '': 'close'}`}>
+            <form onSubmit={handleMessegeSubmit}>
+              <input type="email" name="name" id="name" placeholder='email' value={mailInput} onChange={(e)=> setMailInput(e.target.value)} required />
+              <textarea name="textarea" id="textarea" placeholder="Write a Messege" value={messegeInput} onChange={(e)=> setMessegeInput(e.target.value)}></textarea>
+              <input type="submit" value="submit" />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
