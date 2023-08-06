@@ -726,7 +726,7 @@ textarea{
     background: hsl(0 0% 100% / 0.1);
     backdrop-filter: blur(7rem);
     padding: 0.5rem 1.5rem;
-    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem); 
+    padding-top: 100px; 
     transition: translate var(--animation-timing);
     translate: 100%;
     max-width: 25rem;
@@ -736,6 +736,7 @@ textarea{
 
   .nav-items ul{
     flex-direction: column;
+    gap: 50px;
     padding: 0;
   }
 
