@@ -21,7 +21,7 @@ export default function Contact() {
           </div>
           <span>thegautampurohit</span>
         </div>
-        <div className="contact-item" onClick={()=>window.open('https://www.linkedin.com/in/gautam-purohit-027417207', '_blank')}>
+        <div className="contact-item" onClick={()=>window.open('https://www.linkedin.com/in/purohit-gautam', '_blank')}>
           <div className='contact-icons'>
             <BsLinkedin size={50} color='#0A66C2' />
           </div>
