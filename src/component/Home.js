@@ -1,18 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 
 export default function Home() {
-
-  let [formVisinility, setFormVisinility] = useState(false)
-  let [mailInput, setMailInput] = useState('')
-  let [messegeInput, setMessegeInput] = useState('')
-  const handleMessegeSubmit = (e)=>{
-    e.preventDefault()
-    setMailInput('')
-    setMessegeInput('')
-    alert('Messege Not Sent')
-  }
-
   return (
     <div>
       <div className="home">
@@ -61,9 +50,15 @@ export default function Home() {
             <img src={require("./images/css-logo.png")} alt="CSS" />
             <img
               src={require("./images/javaScript-logo.png")}
-              alt="javaScript" 
+              alt="javaScript"
+            />
+            <img
+              src={require("./images/Typescript_logo.png")}
+              alt="typescript"
             />
             <img src={require("./images/react-logo.png")} alt="react.js" />
+            <img src={require("./images/next-js-logo.png")} alt="next.js" />
+            <img src={require("./images/redux-logo.png")} alt="redux" />
           </div>
         </div>
 
@@ -115,16 +110,6 @@ export default function Home() {
               <span>Located </span>
               <span>in surat</span>
             </div>
-          </div>
-        </div>
-        <div className="messege-me">
-          <p onClick={()=> setFormVisinility(!formVisinility)}>MESSEGE ME</p>
-          <div className={`messege-form ${formVisinility ? '': 'close'}`}>
-            <form onSubmit={handleMessegeSubmit}>
-              <input type="email" name="name" id="name" placeholder='email' value={mailInput} onChange={(e)=> setMailInput(e.target.value)} required />
-              <textarea name="textarea" id="textarea" placeholder="Write a Messege" value={messegeInput} onChange={(e)=> setMessegeInput(e.target.value)}></textarea>
-              <input type="submit" value="submit" />
-            </form>
           </div>
         </div>
       </div>
